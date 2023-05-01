@@ -1,0 +1,48 @@
+html {
+    margin: 10 auto;
+    padding: 10px;
+    background-color: lightblue;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color:darkslategrey;
+    border-bottom: 2px solid bisque;
+}
+
+a:hover {
+    font-style: italic;
+}
+
+h1 {
+    color: black;
+}
+
+h2 {
+    font-size: 2rem;
+    color: darkcyan;
+}
+
+#news {
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+
+.bottom {
+    text-align: center;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 4 rem;
+    border-radius: 12px;
+    background-color: white;
+}
+
+p {
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 4rem;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>synth</title>
+  </head>
+  
+  <style>
+    #pad { 
+      position: absolute;  
+      
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+  
+      background: black;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #label {
+      font: 40px Arial;
+      color: white;
+      user-select: none;
+      text-shadow: 2px 2px #ff0000;
+    }
+  </style>
+    
+  <body>
+    <div id="pad">
+      <div id="label">CLICK / DRAG</div>
+    </div>
+  </body>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+  <script>
+    Tone.start();
+    const synth = new Tone.Synth().toDestination();
+    var pad = document.getElementById('pad'); 
+    var label = document.getElementById('label');
+    var dragging = false;
+
+    function generateRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function down(event) {
+      dragging = true;
+      synth.triggerAttack(400);
+      var x = event.pageX;
+      synth.triggerAttack(x);
+
+      label.innerHTML = Math.round(x) + 'Hz';
+
+      var randomColour = generateRandomColor()
+      pad.style.background = randomColour;
+
+    }
+
+    function up(event) {
+      dragging = false;
+      synth.triggerRelease();
+      label.innerHTML = 'CLICK / DRAG'
+    }
+    
+    function move(event) {
+      if (dragging) {
+        var x = event.pageX;
+        synth.setNote(x);
+        label.innerHTML = Math.round(x) + 'Hz'
+      }
+    }
+
+    pad.addEventListener('pointerdown', down);
+    pad.addEventListener('pointerup', up);
+    pad.addEventListener('pointermove', move)
+
+  </script>
+  
+</html>

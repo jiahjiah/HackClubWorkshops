@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html> 
+    <head>
+        <title>Tree Machine</title>
+    </head>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js"></script>
+
+    <script>
+        //set color of branches
+        var colours = 1
+
+        //how many levels of branches we will draw
+        var depth = 5
+
+        //angle each new branch level rotates by (branches spin left/right)
+        var curl = Math.PI / 3
+
+        //how many brances each new branch will create
+        var breadth = 5
+
+        //the angle between each sub-branch (branches fan out/in)
+        var spread = Math.PI /3
+
+        //every p5 application starts with setup and draw functions
+        function setup() {
+            // Start off by creating a canvas to draw on
+            createCanvas(400, 400)
+        }
+
+        function draw() {
+            //set the curl angle with the mouse X position
+
+            //mouseX/width gets fraction of mouseX position compared to 
+            //width canvas; 0 on left, 1 on right
+
+            //(mouseX/width*2-1) will be -1 on left side, 1 on right
+            curl = Math.PI * ((mouseX / width) * 2 - 1)
+
+            //set spead angle with the mouse Y position
+            spread = Math.PI * ((mouseY / height) * 2 - 1)
+
+            //Draw a black background
+            background(137, 207, 240)
+
+            //Set line color to white
+            stroke(colours)
+            
+            //Move to middle-bottom of canvas
+            translate(200, 400)
+
+            //Turn canvas 180 degrees
+            rotate(Math.PI)
+
+            //Zoom way into canvas
+            scale(200)
+
+            //Set thickness to a much smaller, zoomed-in value
+            strokeWeight(0.1)
+
+            //start drawing branches!
+            branch(depth)
+        }
+
+        function branch(d) {
+            //stroke gets lighter every level
+            stroke(255 - 63 * d)
+
+            line(0, 0, 0, 1)
+
+
+            //if there are any more branch levels to be drawn
+            if (d > 1) {
+                //move canvas to (0, 1), the end of our new line
+                translate(0, 1)
+
+                //rorate the canvas for each new branch
+                rotate(curl)
+
+                //zoom twice as far into the canvas
+                scale(0.5)
+
+
+                for (var i = 0; i < breadth; i++) {
+
+                    //recurse for the next branch
+                    branch(d - 1)
+
+                    //rotate for the next branch
+                    rotate(spread)
+
+                }
+
+                //undo the rotations we applied for each "child" branch
+                rotate(-spread * breadth)
+
+                //undo the curl rotation we applied to this branch
+                rotate(-curl)
+
+                //zoom back out from the canvas
+                scale(2)
+
+                //move back to the start of the line we drew with line(0, 0, 0, 1)
+                translate(0, -1)
+
+
+            }
+
+        }
+    </script>
+
+</html>

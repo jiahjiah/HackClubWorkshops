@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Moogle</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="logo.jpeg" rel="shortcut icon" type="image/x-icon">
+  </head>
+  <body>
+		<img src="moogle.png" width="525" class="image">
+    <div class="search">
+      <input type="text" id="search" class="input">
+      <button id="submit" class="searchbtn" onclick="submit()">Search</button>
+    </div>
+    <div id="buttons" class="buttons">
+      <button id="allbutton" class="all" onclick="submit()"></button>
+    </div>
+    <div id="content"></div>
+    <script src="script.js"></script>
+    <script id="query" src="query.js"></script>
+  </body>
+</html>

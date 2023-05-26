@@ -1,0 +1,46 @@
+body {
+    background-color: dodgerblue;
+}
+
+.text {
+    text-align: center;
+    font-size: 42px;
+}
+
+.secret-div {
+    text-align: center;
+    padding-top: 10rem;
+    /* make secret-div invisible */
+    display: none; 
+}
+
+#my-canvas {
+    /* appears on the whole page */
+    position: absolute;
+}
+
+@keyframes animate {
+	0% {
+		transform: opacity(0.1);
+		transform: scale(0.1);
+		color: whitesmoke;
+	}
+	100% {
+		transform: opacity(1);
+		transform: scale(1);
+		color: black;
+	}
+}
+
+.secret {
+	animation-name: animate;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0.1, 0.84, 0.7, 1); 
+	animation-fill-mode: forwards;
+}
+
+button {
+	width: 50px;
+	height: 30px;
+	cursor: pointer;
+}

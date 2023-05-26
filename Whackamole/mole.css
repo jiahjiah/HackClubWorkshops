@@ -1,0 +1,21 @@
+/* Review this part of the code */
+
+#mole {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	/* Add some style to your mole! */
+	background-color: rgb(99, 58, 58);
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+  filter: drop-shadow(3px 3px 5px #000);
+}
+
+#mole:hover {
+  animation: pop 0.3s linear 1;
+}
+@keyframes pop {
+    50%  {transform: scale(1.2);}
+}

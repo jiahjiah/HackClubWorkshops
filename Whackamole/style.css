@@ -1,0 +1,39 @@
+/* Don't worry about this code! It's just for the formatting */
+
+body {
+    font-family: 'Arial';
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    background-image: url("https://img.freepik.com/free-vector/seamless-textured-grass-natural-grass-pattern_172107-1308.jpg?w=2000");
+    /* background-color: "darkgreen"; */
+    background-size: cover;
+  }
+  
+  #title {
+      background-color: darkgreen;
+    color: white;
+      margin: 10px 10px 0px 10px;
+  }
+  
+  #navbar{
+      height: auto;
+    color: white;
+      background-color: darkgreen;
+      justify-content: space-evenly;
+      display: flex;
+  }
+  
+  #score {
+      background-color: darkgreen;
+    color: white;
+      margin: 10px 10px 10px 0px;
+      text-align: right;
+  }
+  
+  #time {
+      background-color: darkgreen;
+    color: white;
+      margin: 10px 10px 0px 0px;
+      text-align: center;
+  }

@@ -1,0 +1,60 @@
+html, 
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 70px;
+    background-color: white;
+    display: flex;
+}
+
+#logocontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 16px;
+}
+
+#buttoncontainer {
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-right: 30px;
+}
+
+button {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 8px;
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+main {
+    /* so that we can have equal horizontal division between editor div & iframe */
+    display: flex;
+    flex: 1;
+    position: relative;
+}
+
+iframe {
+    /* allow it  to stretch and occupy all remaining vertical space in body */
+    flex: 1; 
+
+}
+
+#editor {
+    flex: 1;
+}

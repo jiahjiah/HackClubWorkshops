@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Jia's Editor</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div id="logocontainer">
+        <img id="logo" src="https://cdn-icons-png.flaticon.com/512/3479/3479853.png" width="60px" />
+      </div>
+      <div id="buttoncontainer">
+        <button onclick="buttonclick()"><b>RUN</b></button>
+      </div>
+    </header>
+    <main>
+      <div id="editor"></div>
+      <iframe id="iframe"> </iframe>
+    </main>
+
+    <!-- let us use the ace editor in our website -->
+    <script
+      src="//ajaxorg.github.io/ace-builds/src-min-noconflict/ace.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
